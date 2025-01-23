@@ -36,7 +36,7 @@ public class BookingService {
         if(bookingDTO.getParticipationDate().isBefore(classEntity.getStartDate()) ||
                 bookingDTO.getParticipationDate().isAfter(classEntity.getEndDate()))
         {
-            throw new InvalidParticipationDateException("Participation Date should be between"+ classEntity.getStartDate()+"and"+ classEntity.getEndDate());
+            throw new InvalidParticipationDateException("Participation Date should be between "+ classEntity.getStartDate()+" and "+ classEntity.getEndDate());
         }
         long bookingCount = bookings.stream()
                 .filter(b -> b.getClassEntity().getId().equals(classEntity.getId()) &&
